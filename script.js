@@ -200,11 +200,11 @@ function checkMatch(card1, card2) {
 // 5. Unshow cards -> 1.5
 function unshow(card1, card2){
   console.log("unshow()");
-  card1.find("card-image").hide();
-  card1.find("card-name").show();
+  card1.find(".card-image").hide();
+  card1.find(".card-name").show();
   card1.attr("state", "unshown");
-  card2.find("card-image").hide();
-  card2.find("card-name").show();
+  card2.find(".card-image").hide();
+  card2.find(".card-name").show();
   card2.attr("state", "unshown");
 }
 
@@ -229,15 +229,12 @@ function checkGame() {
     }
   });
   
-  if (gameOver) {
+  if (gameOver) { // 7B: All are matched -> 8
     youWin();
-  } else {
+  } else { // 7A: Not all are matched -> 1.5
     return
   } 
 }
-// 7A: Not all are matched -> 1.5
-
-// 7B: All are matched -> 8
 
 // 8. You win! message -> 9
 // thoughts: mouse create submission
@@ -249,58 +246,3 @@ function youWin() {
 // 9A: YES -> 1
 
 // 9B: NO -> nothing
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-var count = 0;
-function on(){
-  while ( count <= img_array.length()) {
-  $( ".card" ).click( function() { 
-    $(this).slideUp()
-    $(".card-image").show( "slow" )
-//    click(this);
-  });
-
-    /*
-    function click( a ){ $( ".card" ).click(function() {isMatch(a, this)});};
-  function isMatch( t, g ) { 
-    if($( t ).find( ".matchname" ).text() == $( g ).find( ".matchname" ).text() && $( t ).find( ".matchtype" ).text() != $( g ).find( ".matchtype" ).text()){
-      $( t ).slideUp();
-      $( g ).slideUp();
-      count++;
-    }
-    else{
-      count --; //
-    }
-  }
-  }
-  
-  
-}
-
-on();
-                                                                    
-*/
-
-//define function isMatch()
-
-  //results: wrong
-
-  //results: right
-
-//Count # of right/wrong
-
-//winning
-
-//shuffle?
