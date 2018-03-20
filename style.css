@@ -42,12 +42,25 @@ div#memory_board > div{
   background-color: white;
 }
 
-.card-image {
+.card-image, .card-name {
   height: 100%;
   width: 100%;
   border: none;
-  display: none;
   text-align: center;
+  margin: 0;
+}
+
+.card-name p {
+  margin: 0;
+}
+
+.card-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-image{
+  display: none;
 }
 
 /*
