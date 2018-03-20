@@ -246,4 +246,3 @@ function youWin() {
 // 9A: YES -> 1
 
 // 9B: NO -> nothing
-
