@@ -2,7 +2,7 @@
 
 ## version 3.20.18
 #### issues remaining:
-    1. 3B -> shuffling board
+    1. layout
     2. image credits
     3. you win -> 
        3A. something useful to submit as evidence
