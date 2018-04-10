@@ -121,7 +121,6 @@ var table = 9, chair = 4, light = 3;
 
 function shuffleBoard(img_array){
   var i = img_array.length, j, temp;
-//  var tempImgArr = [];
   while(--i > 0){
     j = Math.floor(Math.random() * (i+1));
     temp = img_array[j];
@@ -147,9 +146,9 @@ function buildBoard() {
   shuffleBoard(img_array);
   for (var i in img_array) {
     var img = img_array[i];
-    var matchname = "<div class='matchname'>" + img.name + "</div>";
-    var matchtype = "<div class='matchtype'>" + img.type + "</div>";
-    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class='card-name'><p>"+img.name+' '+img.type+"</p></div><div class='card-image'><img src=\"" + img.image+"\" alt='alt'></div>"+"</div>")
+    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'GearboB-yellowbkg800x600.png	'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
+    //previous version: with img name showing
+    //$( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class='card-name'><p>"+img.name+' '+img.type+"</p></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
   }
 }
 
@@ -168,10 +167,7 @@ $( ".card" ).click( function() {
 function checkClick(card){
   console.log("checkClick()");
   //3A: clicked on unshown card?
-  
   // 3B: checkGame()
-  
-  
   var cardsClicked = []; //keeping track of cards clicked
   var allCards = $( ".card" );
   console.log(allCards);
@@ -183,8 +179,9 @@ function checkClick(card){
   });
   
   if (cardsClicked.length < 2) {
-    $(card).find(".card-image").css('display', 'block');
-    $(card).find(".card-name").hide();
+    $(card).find(".background-image").hide();
+    $(card).find(".card-image").show();
+//    $(card).find(".card-name").css('visibility','hidden');
     $(card).attr("state", "shown");
     cardsClicked.push($(card));
   } 
@@ -211,12 +208,14 @@ function checkMatch(card1, card2) {
 // 5. Unshow cards -> 1.5
 function unshow(card1, card2){
   console.log("unshow()");
-  card1.find(".card-name").css('display', 'block');
+ // card1.find(".card-name").css('display', 'inline-block');
   card1.find(".card-image").hide();
   card1.attr("state", "unshown");
-  card2.find(".card-name").css('display', 'block');
+  card1.find(".background-image").show();
+//  card2.find(".card-name").css('display', 'inline-block');
   card2.find(".card-image").hide(); 
   card2.attr("state", "unshown");
+  card2.find(".background-image").show();
   }
 // 6.  Keep cards shown, change card state to matched 
 function show( card1, card2){
@@ -225,7 +224,6 @@ function show( card1, card2){
   card2.attr("state", "matched");
   checkGame();
 }
-
 // 7. Check game state
 function checkGame() {
   console.log("checkGame()");
@@ -249,7 +247,7 @@ function checkGame() {
 // 8. You win! message -> 9
 // thoughts: mouse create submission
 function youWin() {
-  alert("You win"); 
+  alert("You win");
 }
 
 // 9. Optional: restart game 
