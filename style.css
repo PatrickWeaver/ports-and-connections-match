@@ -9,8 +9,7 @@ div#memory_board{
   width:920px;
   height:590px;
   padding:5px;
-  margin:0px auto;
-
+  margin:0px auto; 
 }
 
 div#memory_board > div{
@@ -18,12 +17,14 @@ div#memory_board > div{
   border:#ffffff 5px solid;
   width:200px;
   height:118px;
-  float:left;
   margin:10px;
   padding:0px;
   font-size:64px;
   cursor:pointer;
+  display: grid;
   text-align:center;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -32,18 +33,20 @@ div#memory_board > div{
 }
 
 .card {
-  width: 150px;
-  height: 100px;
-  display: inline-block;
+  width: 21%;
+  height: auto;
   padding: 0px;
-  text-align: center;
   margin: 10px;
   border: 1px solid black;
   background-color: white;
+  /*background-image: url("match-card.png");*/
+  display: inline-flex;
+  flex-direction:row;
+  flex-wrap:wrap; 
 }
 
-.card-image, .card-name {
-  height: 100%;
+.card-image, .card-name, .background-image {
+  height: auto;
   width: 100%;
   border: none;
   text-align: center;
@@ -55,7 +58,7 @@ div#memory_board > div{
 }
 
 .card-image img {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
