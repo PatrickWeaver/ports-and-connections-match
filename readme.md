@@ -1,5 +1,19 @@
 # Ports and Connections
+## version 4.11.18
+#### Code issues remaining:
+#### Game issues:
+    A) count of steps/clicks showing up after game is completed -> player will not see this if restarting immediately
 
+## version 4.10.18
+#### Code issues remaining:
+    1. list of image credits during buildBoard()
+    2. you win -> new game
+    3. Add a match checklist //for submit as evidence (see .html)
+#### Game issues:
+    A) Knowing that it was a match --> match checklist
+    B) alt for images?
+    C) maybe count of steps/clicks 
+    
 ## version 3.27.18
 #### Code issues remaining:
     1. layout
@@ -8,7 +22,7 @@
     3. you win -> 
        3A. something useful to submit as evidence
        3B. new game
-    4. Card background image
+    4. Card background image DONE
     5. Add a match checklist
     
 #### Game issues:
