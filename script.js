@@ -6,9 +6,9 @@ var img_array = [
   {
     type: "port",
     name: "USB-A",
-    image: "/card-images/USBA_Port.png",
-    credit: "Mk2010",
-    creditLink: "https://commons.wikimedia.org/wiki/User:Mk2010"
+    image: "/card-images/USBA_Port.jpg",
+    credit: "Mouse",
+    creditLink: "https://www.mouse.org"
   },
   {
     type: "plug",
@@ -20,57 +20,57 @@ var img_array = [
   {
     type: "port",
     name: "HDMI",
-    image: "/card-images/HDMI_Port.png",
-    credit: "Max Pixel",
-    creditLink: "http://maxpixel.freegreatpicture.com/static/photo/1x/Usb-Vga-Hdmi-1394-Laptop-Lan-1884.jpg"    
+    image: "/card-images/HDMI_Port.jpg",
+    credit: "Mouse",
+    creditLink: "https://www.mouse.org"   
   },
   {
     type: "plug",
     name: "HDMI",
     image: "/card-images/HDMI_Plug.png",
     credit: "D-Kuru",
-    creditLink: "https://commons.wikimedia.org/wiki/User:D-Kuru"    
+    creditLink: "https://commons.wikimedia.org/wiki/File:HDMI_connector-male_2_sharp_PNr%C2%B00059.jpg"    
   },
   {
     type: "port",
     name: "VGA",
     image: "/card-images/VGA_Port.png",
     credit: "Duncan Lithgow",
-    creditLink: "https://en.wikipedia.org/wiki/User:DuLithgow"   
+    creditLink: "https://commons.wikimedia.org/wiki/File:SVGA_port.jpg"   
   },
   {
     type: "plug",
     name: "VGA",
     image: "/card-images/VGA_Plug.png",
     credit: "Evan-Amos",
-    creditLink: "https://commons.wikimedia.org/wiki/User:Evan-Amos"  
+    creditLink: "https://commons.wikimedia.org/wiki/File:Vga-cable.jpg"  
   },
   {
     type: "port",
     name: "Audio3.5",
     image: "/card-images/Audio_Port.png",
-    credit: "Bubba73 (Jud McCranie)",
-    creditLink: "https://commons.wikimedia.org/wiki/User:Bubba73"    
+    credit: "Bubba73",
+    creditLink: "https://commons.wikimedia.org/wiki/File:USB_2_and_3.jpg"    
   },
   {
     type: "plug",
     name: "Audio3.5",
     image: "/card-images/Audio_Plug.png",
-    credit: "an3k",
+    credit: "An3k",
     creditLink: "https://commons.wikimedia.org/wiki/File:Klinkenstecker_5-polig.jpg"    
   },
   {
     type: "port",
-    name: "SD",
+    name: "SD Card",
     image: "/card-images/SD_Port.png",
-    credit: "seagul",
+    credit: "Seagul",
     creditLink: "https://pixabay.com/en/usb-port-sd-card-laptop-sound-829329/"    
   },
   {
     type: "plug",
-    name: "SD",
+    name: "SD Card",
     image: "/card-images/SD_Plug.png",
-    credit: "Zxb",
+    credit: "Ivob",
     creditLink: "https://commons.wikimedia.org/wiki/File:Flash_memory_cards_size.jpg"   
   },
   {
@@ -78,7 +78,7 @@ var img_array = [
     name: "Ethernet",
     image: "/card-images/Ethernet_Port.png",
     credit: "Asim18",
-    creditLink: "https://upload.wikimedia.org/wikipedia/commons/2/21/Adsl_connections.jpg" 
+    creditLink: "https://commons.wikimedia.org/wiki/File:Adsl_connections.jpg" 
   },
   {
     type: "plug",
@@ -99,7 +99,7 @@ var img_array = [
     name: "Thunderbolt/Mini Display Port",
     image: "/card-images/MiniDisplay_Plug.png",
     credit: "Palthrow",
-    creditLink: "https://cs.wikipedia.org/wiki/Mini_DisplayPort#/media/File:Mini_displayport.jpg"    
+    creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"    
   },
   {
     type: "port",
@@ -146,12 +146,14 @@ function buildBoard() {
   shuffleBoard(img_array);
   for (var i in img_array) {
     var img = img_array[i];
-    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'GearboB-yellowbkg800x600.png	'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
-    //previous version: with img name showing
-    //$( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class='card-name'><p>"+img.name+' '+img.type+"</p></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
+    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'match-card2-800x600.png'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
+  var node = document.createElement("LI");
+    node.id = "credit-Link"+i;
+    node.innerHTML = img.name+" "+img.type+" by <a href="+img.creditLink+" target='_blank'>"+img.credit+"</a>"
+  document.getElementById("image-credits").appendChild(node);
   }
 }
-
+var stepcount = 0;
 buildBoard();
 
 // 1.5 Wait for player to do something
@@ -175,6 +177,7 @@ function checkClick(card){
     var cardStatus = $(this).attr("state");
     if (cardStatus === "shown") {
       cardsClicked.push($(this));
+      stepcount++;
     }
   });
   
@@ -197,7 +200,7 @@ function checkMatch(card1, card2) {
   console.log("checkMatch()");
   if (card1.attr("cardName") === card2.attr("cardName") && card1.attr("cardType") != card2.attr("cardType")) {
     show(card1, card2);
-    return
+  return
   } else {
     setTimeout(function(){unshow(card1, card2)},1000);
   }
@@ -217,11 +220,15 @@ function unshow(card1, card2){
   card2.attr("state", "unshown");
   card2.find(".background-image").show();
   }
-// 6.  Keep cards shown, change card state to matched 
+// 6.  Result of matched pair
 function show( card1, card2){
   console.log("show()");
   card1.attr("state", "matched");
-  card2.attr("state", "matched");
+  card2.attr("state", "matched"); 
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(card1.attr("cardName"));
+  node.appendChild(textnode);
+  document.getElementById("match-list").appendChild(node);
   checkGame();
 }
 // 7. Check game state
@@ -245,9 +252,12 @@ function checkGame() {
 }
 
 // 8. You win! message -> 9
-// thoughts: mouse create submission
 function youWin() {
-  alert("You win");
+    if (confirm("Restart Game!")) {
+        window.location.reload(true);
+    } else {
+    }
+    document.getElementById("step-count").innerHTML = "You completed the game in "+stepcount+" steps!";  
 }
 
 // 9. Optional: restart game 
