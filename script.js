@@ -175,18 +175,30 @@ function checkClick(card){
   console.log(allCards);
   allCards.each(function() {
     var cardStatus = $(this).attr("state");
+    
     if (cardStatus === "shown") {
       cardsClicked.push($(this));
       stepcount++;
     }
   });
+  console.log("Cards Clicked:");
+  console.log(cardsClicked);
   
   if (cardsClicked.length < 2) {
     $(card).find(".background-image").hide();
     $(card).find(".card-image").show();
 //    $(card).find(".card-name").css('visibility','hidden');
     $(card).attr("state", "shown");
-    cardsClicked.push($(card));
+    
+    if (cardsClicked.length === 1) {
+      var card1 = cardsClicked[0];
+      var card2 = $(card);
+      if (!(card1.attr("cardName") === card2.attr("cardName") && card1.attr("cardType") === card2.attr("cardType"))) {
+        cardsClicked.push($(card));
+      }
+    } else {
+      cardsClicked.push($(card));
+    }
   } 
   if (cardsClicked.length === 2) {
     checkMatch(cardsClicked[0], cardsClicked[1])
@@ -253,11 +265,14 @@ function checkGame() {
 
 // 8. You win! message -> 9
 function youWin() {
-    if (confirm("Restart Game!")) {
+      document.getElementById("step-count").innerHTML = stepcount; 
+  $("#alert").show();
+  /*    if (confirm("Restart Game!")) {
         window.location.reload(true);
     } else {
     }
     document.getElementById("step-count").innerHTML = "You completed the game in "+stepcount+" steps!";  
+*/
 }
 
 // 9. Optional: restart game 
