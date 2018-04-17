@@ -40,10 +40,10 @@ div#memory-board{
 }
 
 .card {
-  width: 21%;
+  width: 24%;
   height: auto;
   padding: 0px;
-  margin: 10px 0px;
+  margin: 2px 0px;
   border: 1px solid black;
   display: inline-flex;
   flex-direction: row;
