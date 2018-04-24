@@ -146,7 +146,7 @@ function buildBoard() {
   shuffleBoard(img_array);
   for (var i in img_array) {
     var img = img_array[i];
-    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'match-card2-800x600.png'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
+    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'LD-Ports&ConnectionsGame-Imgs.png'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
   var node = document.createElement("LI");
     node.id = "credit-Link"+i;
     node.innerHTML = img.name+" "+img.type+" by <a href="+img.creditLink+" target='_blank'>"+img.credit+"</a>"
@@ -265,8 +265,8 @@ function checkGame() {
 
 // 8. You win! message -> 9
 function youWin() {
-      document.getElementById("step-count").innerHTML = stepcount; 
-  $("#alert").show();
+    document.getElementById("step-count").innerHTML = stepcount; 
+    $("#alert").show();
   /*    if (confirm("Restart Game!")) {
         window.location.reload(true);
     } else {

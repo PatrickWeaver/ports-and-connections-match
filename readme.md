@@ -1,4 +1,8 @@
 # Ports and Connections
+## version 4.24.18
+#### new card-background image
+#### issue found: click 2 images that aren't a match will uncover the winning board.
+
 ## version 4.17.18
 #### DONE!! 
 
