@@ -241,6 +241,8 @@ function show( card1, card2){
   var textnode = document.createTextNode(card1.attr("cardName"));
   node.appendChild(textnode);
   document.getElementById("match-list").appendChild(node);
+  card1.off("click");
+  card2.off("click");
   checkGame();
 }
 // 7. Check game state
@@ -267,6 +269,7 @@ function checkGame() {
 function youWin() {
     document.getElementById("step-count").innerHTML = stepcount; 
     $("#alert").show();
+  
   /*    if (confirm("Restart Game!")) {
         window.location.reload(true);
     } else {
