@@ -1,4 +1,9 @@
 # Ports and Connections
+## version 5.8.18
+#### issues solved by turning off clicking:
+    1. matched (shown) cards unreveals itself when it's clicked with non-match card
+    2. clicking is still enabled after game wins
+
 ## version 4.24.18
 #### new card-background image
 #### issue found: click 2 images that aren't a match will uncover the winning board.
