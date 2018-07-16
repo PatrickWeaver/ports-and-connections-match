@@ -6,35 +6,35 @@ var img_array = [
   {
     type: "port",
     name: "USB-A",
-    image: "/card-images/USBA_Port.jpg",
+    image: "card-images/USBA_Port.jpg",
     credit: "Mouse",
     creditLink: "https://www.mouse.org"
   },
   {
     type: "plug",
     name: "USB-A",
-    image: "/card-images/USBA_Plug.png",
+    image: "card-images/USBA_Plug.png",
     credit: "Marco Verch",
     creditLink: "https://www.flickr.com/photos/30478819@N08/"
   },
   {
     type: "port",
     name: "HDMI",
-    image: "/card-images/HDMI_Port.jpg",
+    image: "card-images/HDMI_Port.jpg",
     credit: "Mouse",
     creditLink: "https://www.mouse.org"
   },
   {
     type: "plug",
     name: "HDMI",
-    image: "/card-images/HDMI_Plug.png",
+    image: "card-images/HDMI_Plug.png",
     credit: "D-Kuru",
     creditLink: "https://commons.wikimedia.org/wiki/File:HDMI_connector-male_2_sharp_PNr%C2%B00059.jpg"
   },
   {
     type: "port",
     name: "VGA",
-    image: "/card-images/VGA_Port.png",
+    image: "card-images/VGA_Port.png",
     credit: "Duncan Lithgow",
     creditLink: "https://commons.wikimedia.org/wiki/File:SVGA_port.jpg"
   },
@@ -48,14 +48,14 @@ var img_array = [
   {
     type: "port",
     name: "Audio3.5",
-    image: "/card-images/Audio_Port.png",
+    image: "card-images/Audio_Port.png",
     credit: "Bubba73",
     creditLink: "https://commons.wikimedia.org/wiki/File:USB_2_and_3.jpg"
   },
   {
     type: "plug",
     name: "Audio3.5",
-    image: "/card-images/Audio_Plug.png",
+    image: "card-images/Audio_Plug.png",
     credit: "An3k",
     creditLink: "https://commons.wikimedia.org/wiki/File:Klinkenstecker_5-polig.jpg"
   },
@@ -69,49 +69,49 @@ var img_array = [
   {
     type: "plug",
     name: "SD Card",
-    image: "/card-images/SD_Plug.png",
+    image: "card-images/SD_Plug.png",
     credit: "Ivob",
     creditLink: "https://commons.wikimedia.org/wiki/File:Flash_memory_cards_size.jpg"
   },
   {
     type: "port",
     name: "Ethernet",
-    image: "/card-images/Ethernet_Port.png",
+    image: "card-images/Ethernet_Port.png",
     credit: "Asim18",
     creditLink: "https://commons.wikimedia.org/wiki/File:Adsl_connections.jpg"
   },
   {
     type: "plug",
     name: "Ethernet",
-    image: "/card-images/Ethernet_Plug.png",
+    image: "card-images/Ethernet_Plug.png",
     credit: "David Monniaux",
     creditLink: "https://commons.wikimedia.org/wiki/Ethernet#/media/File:Ethernet_RJ45_connector_p1160054.jpg"
   },
   {
     type: "port",
     name: "Thunderbolt/Mini Display Port",
-    image: "/card-images/MiniDisplay_Port.png",
+    image: "card-images/MiniDisplay_Port.png",
     credit: "Aurélien Selle",
     creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"
   },
   {
     type: "plug",
     name: "Thunderbolt/Mini Display Port",
-    image: "/card-images/MiniDisplay_Plug.png",
+    image: "card-images/MiniDisplay_Plug.png",
     credit: "Palthrow",
     creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"
   },
   {
     type: "port",
     name: "USB-C",
-    image: "/card-images/USBC_Port.png",
+    image: "card-images/USBC_Port.png",
     credit: "Maurizio Pesce",
     creditLink: "https://www.flickr.com/photos/pestoverde/17161161357/"
   },
   {
     type: "plug",
     name: "USB-C",
-    image: "/card-images/USBC_Plug.png",
+    image: "card-images/USBC_Plug.png",
     credit: "Santeri Viinamäki",
     creditLink: "https://commons.wikimedia.org/w/index.php?curid=60401805"
   }
