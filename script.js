@@ -22,91 +22,91 @@ var img_array = [
     name: "HDMI",
     image: "/card-images/HDMI_Port.jpg",
     credit: "Mouse",
-    creditLink: "https://www.mouse.org"   
+    creditLink: "https://www.mouse.org"
   },
   {
     type: "plug",
     name: "HDMI",
     image: "/card-images/HDMI_Plug.png",
     credit: "D-Kuru",
-    creditLink: "https://commons.wikimedia.org/wiki/File:HDMI_connector-male_2_sharp_PNr%C2%B00059.jpg"    
+    creditLink: "https://commons.wikimedia.org/wiki/File:HDMI_connector-male_2_sharp_PNr%C2%B00059.jpg"
   },
   {
     type: "port",
     name: "VGA",
     image: "/card-images/VGA_Port.png",
     credit: "Duncan Lithgow",
-    creditLink: "https://commons.wikimedia.org/wiki/File:SVGA_port.jpg"   
+    creditLink: "https://commons.wikimedia.org/wiki/File:SVGA_port.jpg"
   },
   {
     type: "plug",
     name: "VGA",
     image: "/card-images/VGA_Plug.png",
     credit: "Evan-Amos",
-    creditLink: "https://commons.wikimedia.org/wiki/File:Vga-cable.jpg"  
+    creditLink: "https://commons.wikimedia.org/wiki/File:Vga-cable.jpg"
   },
   {
     type: "port",
     name: "Audio3.5",
     image: "/card-images/Audio_Port.png",
     credit: "Bubba73",
-    creditLink: "https://commons.wikimedia.org/wiki/File:USB_2_and_3.jpg"    
+    creditLink: "https://commons.wikimedia.org/wiki/File:USB_2_and_3.jpg"
   },
   {
     type: "plug",
     name: "Audio3.5",
     image: "/card-images/Audio_Plug.png",
     credit: "An3k",
-    creditLink: "https://commons.wikimedia.org/wiki/File:Klinkenstecker_5-polig.jpg"    
+    creditLink: "https://commons.wikimedia.org/wiki/File:Klinkenstecker_5-polig.jpg"
   },
   {
     type: "port",
     name: "SD Card",
     image: "/card-images/SD_Port.png",
     credit: "Seagul",
-    creditLink: "https://pixabay.com/en/usb-port-sd-card-laptop-sound-829329/"    
+    creditLink: "https://pixabay.com/en/usb-port-sd-card-laptop-sound-829329/"
   },
   {
     type: "plug",
     name: "SD Card",
     image: "/card-images/SD_Plug.png",
     credit: "Ivob",
-    creditLink: "https://commons.wikimedia.org/wiki/File:Flash_memory_cards_size.jpg"   
+    creditLink: "https://commons.wikimedia.org/wiki/File:Flash_memory_cards_size.jpg"
   },
   {
     type: "port",
     name: "Ethernet",
     image: "/card-images/Ethernet_Port.png",
     credit: "Asim18",
-    creditLink: "https://commons.wikimedia.org/wiki/File:Adsl_connections.jpg" 
+    creditLink: "https://commons.wikimedia.org/wiki/File:Adsl_connections.jpg"
   },
   {
     type: "plug",
     name: "Ethernet",
     image: "/card-images/Ethernet_Plug.png",
     credit: "David Monniaux",
-    creditLink: "https://commons.wikimedia.org/wiki/Ethernet#/media/File:Ethernet_RJ45_connector_p1160054.jpg"   
+    creditLink: "https://commons.wikimedia.org/wiki/Ethernet#/media/File:Ethernet_RJ45_connector_p1160054.jpg"
   },
   {
     type: "port",
     name: "Thunderbolt/Mini Display Port",
     image: "/card-images/MiniDisplay_Port.png",
     credit: "Aurélien Selle",
-    creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"   
+    creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"
   },
   {
     type: "plug",
     name: "Thunderbolt/Mini Display Port",
     image: "/card-images/MiniDisplay_Plug.png",
     credit: "Palthrow",
-    creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"    
+    creditLink: "https://commons.wikimedia.org/wiki/File:Mini_DisplayPort_on_Apple_MacBook.jpg"
   },
   {
     type: "port",
     name: "USB-C",
     image: "/card-images/USBC_Port.png",
     credit: "Maurizio Pesce",
-    creditLink: "https://www.flickr.com/photos/pestoverde/17161161357/"    
+    creditLink: "https://www.flickr.com/photos/pestoverde/17161161357/"
   },
   {
     type: "plug",
@@ -146,7 +146,7 @@ function buildBoard() {
   shuffleBoard(img_array);
   for (var i in img_array) {
     var img = img_array[i];
-    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'LD-Ports&ConnectionsGame-Imgs.png'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
+    $( "#memory-board" ).append("<div class='card' state='unshown' cardName='" + img.name + "' cardType='" + img.type + "' id="+ img.name + img.type +"><div class = 'background-image'><img src = 'card-images/card-background.png'></div><div class='card-image'><img src=\"" + img.image+"\"></div>"+"</div>")
   var node = document.createElement("LI");
     node.id = "credit-Link"+i;
     node.innerHTML = img.name+" "+img.type+" by <a href="+img.creditLink+" target='_blank'>"+img.credit+"</a>"
@@ -175,7 +175,7 @@ function checkClick(card){
   console.log(allCards);
   allCards.each(function() {
     var cardStatus = $(this).attr("state");
-    
+
     if (cardStatus === "shown") {
       cardsClicked.push($(this));
       stepcount++;
@@ -183,13 +183,13 @@ function checkClick(card){
   });
   console.log("Cards Clicked:");
   console.log(cardsClicked);
-  
+
   if (cardsClicked.length < 2) {
     $(card).find(".background-image").hide();
     $(card).find(".card-image").show();
 //    $(card).find(".card-name").css('visibility','hidden');
     $(card).attr("state", "shown");
-    
+
     if (cardsClicked.length === 1) {
       var card1 = cardsClicked[0];
       var card2 = $(card);
@@ -199,11 +199,11 @@ function checkClick(card){
     } else {
       cardsClicked.push($(card));
     }
-  } 
+  }
   if (cardsClicked.length === 2) {
     checkMatch(cardsClicked[0], cardsClicked[1])
   }
-  
+
   // Is clicking a third card a problem?
 }
 
@@ -228,7 +228,7 @@ function unshow(card1, card2){
   card1.attr("state", "unshown");
   card1.find(".background-image").show();
 //  card2.find(".card-name").css('display', 'inline-block');
-  card2.find(".card-image").hide(); 
+  card2.find(".card-image").hide();
   card2.attr("state", "unshown");
   card2.find(".background-image").show();
   }
@@ -236,7 +236,7 @@ function unshow(card1, card2){
 function show( card1, card2){
   console.log("show()");
   card1.attr("state", "matched");
-  card2.attr("state", "matched"); 
+  card2.attr("state", "matched");
   var node = document.createElement("LI");
   var textnode = document.createTextNode(card1.attr("cardName"));
   node.appendChild(textnode);
@@ -250,35 +250,35 @@ function checkGame() {
   console.log("checkGame()");
   var gameOver = true;
   var allCards = $( ".card" );
-  
+
   allCards.each(function() {
     var cardStatus = $(this).attr("state");
     if (cardStatus != "matched") {
       gameOver = false;
     }
   });
-  
+
   if (gameOver) { // 7B: All are matched -> 8
     setTimeout(function() {youWin()}, 100);
   } else { // 7A: Not all are matched -> 1.5
     return
-  } 
+  }
 }
 
 // 8. You win! message -> 9
 function youWin() {
-    document.getElementById("step-count").innerHTML = stepcount; 
+    document.getElementById("step-count").innerHTML = stepcount;
     $("#alert").show();
-  
+
   /*    if (confirm("Restart Game!")) {
         window.location.reload(true);
     } else {
     }
-    document.getElementById("step-count").innerHTML = "You completed the game in "+stepcount+" steps!";  
+    document.getElementById("step-count").innerHTML = "You completed the game in "+stepcount+" steps!";
 */
 }
 
-// 9. Optional: restart game 
+// 9. Optional: restart game
 // 9A: YES -> 1
 
 // 9B: NO -> nothing
